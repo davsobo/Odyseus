@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,8 +16,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class main_drawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private RecyclerView rv;
+    private LinearLayoutManager layoutManager;
+    private MyAdapter myAdapter;
+    private List<Person> personList = new ArrayList<Person>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +52,16 @@ public class main_drawer extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //set Recycler View
+        rv = (RecyclerView) findViewById(R.id.content_main_drawer);
+        layoutManager = new LinearLayoutManager(this);
+        rv.setLayoutManager(layoutManager);
+
+        initPersonList();
+        myAdapter = new MyAdapter(personList);
+        rv.setAdapter(myAdapter);
+
     }
 
     @Override
@@ -95,5 +116,15 @@ public class main_drawer extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void initPersonList() {
+        personList.add(new Person("Timun Mas", "subtitle", 1));
+        personList.add(new Person("Putri Duyung", "subtitle", 1));
+        personList.add(new Person("Pangeran Kodok", "subtitle", 1));
+        personList.add(new Person("Pinokio", "subtitle", 1));
+        personList.add(new Person("Malin Kundang", "subtitle", 1));
+        personList.add(new Person("Putri Salju", "subtitle", 1));
+
     }
 }
