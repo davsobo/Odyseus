@@ -79,4 +79,8 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+
+
+    <string name="judul_buku">Timun Mas</string>
+    <string name="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mauris risus, interdum vel lacus quis, blandit eleifend justo. Morbi pretium ligula et augue rutrum ultricies.</string>
 </resources>
