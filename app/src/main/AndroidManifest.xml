@@ -24,6 +24,8 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".recycler_activity" />
         <activity android:name=".CardView" />
+        <activity android:name=".ModeActivity"></activity>
+        <activity android:name=".MenuSetting"></activity>
         <activity android:name=".AboutUs"></activity>
     </application>
 
