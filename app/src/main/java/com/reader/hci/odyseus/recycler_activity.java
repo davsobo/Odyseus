@@ -21,15 +21,13 @@ public class recycler_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_xml_cardview);
-        rv = (RecyclerView) findViewById(R.id.cv);
+        setContentView(R.layout.activity_recycler);
+        rv = (RecyclerView) findViewById(R.id.rv);
         rv.setHasFixedSize(true);
-
-        //use a linear layout manager
         llm = new LinearLayoutManager(this);
-        mLayoutManager = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
-        rv.setHasFixedSize(true);
+        initializeAdapter();
+        initializeData();
     }
 
 
