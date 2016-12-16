@@ -24,11 +24,12 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".recycler_activity" />
         <activity android:name=".CardView" />
-        <activity android:name=".AboutUs" />
         <activity
             android:name=".StoryPageActivity"
             android:label="@string/title_activity_story_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ModeActivity"></activity>
+        <activity android:name=".MenuSetting"></activity>
     </application>
 
 </manifest>

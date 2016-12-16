@@ -100,7 +100,8 @@ public class main_drawer extends AppCompatActivity
             Intent intent  = new Intent(this, CardView.class);
             startActivity(intent);
         } else if (id == R.id.nav_settings) {
-
+            Intent intent = new Intent(this,MenuSetting.class);
+            startActivity(intent);
         } else if (id == R.id.nav_aboutus) {
 
         }
