@@ -1,5 +1,6 @@
 package com.reader.hci.odyseus;
 
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class StoryPageActivity extends AppCompatActivity {
@@ -60,6 +62,7 @@ public class StoryPageActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
 
@@ -93,7 +96,7 @@ public class StoryPageActivity extends AppCompatActivity {
          * The fragment argument representing the section number for this
          * fragment.
          */
-        private static final String ARG_SECTION_NUMBER = "section_number";
+        private static final String ARG_SECTION_NUMBER = "hi-section_number";
 
         public PlaceholderFragment() {
         }
@@ -114,8 +117,21 @@ public class StoryPageActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_story_page, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+           // textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
+            ImageView imageView = (ImageView) rootView.findViewById(R.id.imageViewStory);
+            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
+                case 1: imageView.setImageResource(R.drawable.timunmas1); break;
+                case 2: imageView.setImageResource(R.drawable.timunmas2); break;
+                case 3: imageView.setImageResource(R.drawable.timunmas3); break;
+                case 4: imageView.setImageResource(R.drawable.timunmas4); break;
+                case 5: imageView.setImageResource(R.drawable.timunmas5); break;
+                case 6: imageView.setImageResource(R.drawable.timunmas6); break;
+                case 7: imageView.setImageResource(R.drawable.timunmas7); break;
+
+            }
+
             return rootView;
         }
     }
@@ -139,8 +155,7 @@ public class StoryPageActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            return 7;
         }
 
         @Override
