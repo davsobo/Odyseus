@@ -17,7 +17,7 @@
         </activity>
         <activity
             android:name=".main_drawer"
-            android:label="@string/title_activity_main_drawer"
+            android:label="Main Menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SettingsActivity"
@@ -30,7 +30,9 @@
             android:label="Timun Mas"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ModeActivity"></activity>
-        <activity android:name=".MenuSetting"></activity>
+        <activity android:name=".MenuSetting"
+            android:label="Settings"
+            ></activity>
     </application>
 
 </manifest>
