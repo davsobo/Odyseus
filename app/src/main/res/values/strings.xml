@@ -83,4 +83,6 @@
 
     <string name="judul_buku">Timun Mas</string>
     <string name="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mauris risus, interdum vel lacus quis, blandit eleifend justo. Morbi pretium ligula et augue rutrum ultricies.</string>
+    <string name="title_activity_story_page">StoryPageActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

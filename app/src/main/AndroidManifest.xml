@@ -24,7 +24,11 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".recycler_activity" />
         <activity android:name=".CardView" />
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".AboutUs" />
+        <activity
+            android:name=".StoryPageActivity"
+            android:label="@string/title_activity_story_page"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
