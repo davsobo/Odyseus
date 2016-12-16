@@ -1,54 +1,66 @@
 package com.reader.hci.odyseus;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by USER on 10-Dec-16.
  */
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private String[] mDataset;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        //each data item is just a string in this case
-        public TextView mTextView;
-        public ViewHolder(TextView v) {
-            super(v);
-            mTextView = v;
+//public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
+
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        CardView cv;
+        TextView personName;
+        TextView personAge;
+        ImageView personPhoto;
+
+        ViewHolder(View itemView) {
+            super(itemView);
+            cv = (CardView)itemView.findViewById(R.id.cv);
+            personName = (TextView)itemView.findViewById(R.id.person_name);
+            personAge = (TextView)itemView.findViewById(R.id.person_age);
+            personPhoto = (ImageView)itemView.findViewById(R.id.person_photo);
         }
     }
+    List<Person>persons;
 
-    //provide a suitable constructor
-    public MyAdapter(String[] myDataset){
-        mDataset = myDataset;
+    MyAdapter(List<Person> persons){
+        this.persons = persons;
     }
 
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        //create a new view
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.info_text,parent,false);
-        //set the view's size,margin,paddings and layout parameters
-        //code here
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
     }
 
-    //Replace the contecnt of a view invoked by the layout manager
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position){
-        //- get element from your dataset at this position
-        //- replace the content of the view with that element
-        holder.mTextView.setText(mDataset[position]);
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item, viewGroup, false);
+        ViewHolder pvh = new ViewHolder(v);
+        return pvh;
     }
 
-    //return the size of your dataset invoked by the layout manager
+    @Override
+    public void onBindViewHolder(ViewHolder personViewHolder, int i) {
+        personViewHolder.personName.setText(persons.get(i).name);
+        personViewHolder.personAge.setText(persons.get(i).age);
+        personViewHolder.personPhoto.setImageResource(persons.get(i).photoId);
+    }
+
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return persons.size();
     }
 }
