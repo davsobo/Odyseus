@@ -112,7 +112,11 @@ public class StoryPageActivity extends AppCompatActivity {
 
             ImageView imageView = (ImageView) rootView.findViewById(R.id.imageViewStory);
             switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
-                case 1: imageView.setImageResource(R.drawable.timunmas1); break;
+                case 1: {
+                    TextView txtView = (TextView) rootView.findViewById(R.id.txtView);
+                    txtView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+                    imageView.setImageResource(R.drawable.timunmas1);
+                } break;
                 case 2: imageView.setImageResource(R.drawable.timunmas2); break;
                 case 3: imageView.setImageResource(R.drawable.timunmas3); break;
                 case 4: imageView.setImageResource(R.drawable.timunmas4); break;
