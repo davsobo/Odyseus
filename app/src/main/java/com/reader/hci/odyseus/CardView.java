@@ -115,14 +115,14 @@ public class CardView extends AppCompatActivity {
                 case 1: {
                     TextView txtView = (TextView) rootView.findViewById(R.id.txtView);
                     txtView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-                    imageView.setImageResource(R.drawable.help1);
+                    imageView.setImageResource(R.drawable.gmbrhelp1);
                 } break;
-                case 2: imageView.setImageResource(R.drawable.help2); break;
-                case 3: imageView.setImageResource(R.drawable.help3); break;
-                case 4: imageView.setImageResource(R.drawable.help4); break;
-                case 5: imageView.setImageResource(R.drawable.help5); break;
-                case 6: imageView.setImageResource(R.drawable.help6); break;
-                case 7: imageView.setImageResource(R.drawable.help7); break;
+                case 2: imageView.setImageResource(R.drawable.gmbrhelp2); break;
+                case 3: imageView.setImageResource(R.drawable.gmbrhelp3); break;
+                case 4: imageView.setImageResource(R.drawable.gmbrhelp4); break;
+                case 5: imageView.setImageResource(R.drawable.gmbrhelp5); break;
+                case 6: imageView.setImageResource(R.drawable.gmbrhelp6); break;
+                case 7: imageView.setImageResource(R.drawable.gmbrhelp7); break;
 
             }
 
